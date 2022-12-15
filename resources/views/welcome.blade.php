@@ -48,10 +48,11 @@
         const d = new Date();
         let year = d.getFullYear();
         let chartData = [];
-        let i = 0;
-        for (let i = 1; i < 13; i++) {
+        let i = 1;
+        for (i; i < 13; i++) {
             chartData.push(userData[i] ?? 0)
         }
+        console.log(chartData);
         Highcharts.chart('userGrowth', {
             title: {
                 text: 'New User Growth,'+year
@@ -71,7 +72,7 @@
             },
             legend: {
                 layout: 'vertical',
-                align: 'right',
+                align: 'left',
                 verticalAlign: 'middle'
             },
             plotOptions: {

@@ -13,8 +13,22 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <?php
+                        echo "Calling statically via. Facades <br />";
+                        echo  FacadesCalculator::add(5,2)."<br />";
+                        echo  FacadesCalculator::subtract(5,2)."<br />";
+                        echo  FacadesCalculator::multiply(5,2)."<br />";
+                        echo  FacadesCalculator::divide(5,2)."<br />";
 
-                    {{ __('You are logged in!') }}
+                        echo "------------------------<br/>";
+
+                        echo "Calling non-statically via object of a class. <br />";
+                        $calculator =  new App\Calculator\Calculator();
+                        echo  $calculator->add(5,2)."<br />";
+                        echo  $calculator->subtract(5,2)."<br />";
+                        echo  $calculator->multiply(5,2)."<br />";
+                        echo  $calculator->divide(5,2)."<br />";
+                    ?>
                 </div>
             </div>
         </div>
